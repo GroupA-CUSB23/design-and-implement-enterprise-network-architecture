@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" font-family="Arial, sans-serif">
+  <defs>
+    <linearGradient id="l4" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#8E44AD"/>
+      <stop offset="100%" stop-color="#9B59B6"/>
+    </linearGradient>
+    <linearGradient id="l3" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#2980B9"/>
+      <stop offset="100%" stop-color="#3498DB"/>
+    </linearGradient>
+    <linearGradient id="l2" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#16A085"/>
+      <stop offset="100%" stop-color="#1ABC9C"/>
+    </linearGradient>
+    <linearGradient id="l1" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#D35400"/>
+      <stop offset="100%" stop-color="#E67E22"/>
+    </linearGradient>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="120%">
+      <feDropShadow dx="2" dy="3" stdDeviation="3" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+
+  <rect width="800" height="500" fill="#F8F9FA"/>
+
+  <text x="400" y="35" text-anchor="middle" font-size="22" font-weight="bold" fill="#2C3E50">TCP/IP Model - 4 Layers</text>
+
+  <!-- Layer 4 Application -->
+  <rect x="100" y="70" width="600" height="80" rx="8" fill="url(#l4)" filter="url(#shadow)"/>
+  <text x="130" y="105" font-size="18" font-weight="bold" fill="white">Layer 4</text>
+  <text x="130" y="130" font-size="14" fill="white">APPLICATION</text>
+  <text x="400" y="105" font-size="14" font-weight="bold" fill="white">HTTP/HTTPS, DNS, SMTP, FTP, SSH, SNMP</text>
+  <text x="400" y="128" font-size="12" fill="#F0F0F0">Internet Banking, Email Notifications, Domain Resolution</text>
+
+  <!-- Layer 3 Transport -->
+  <rect x="100" y="170" width="600" height="80" rx="8" fill="url(#l3)" filter="url(#shadow)"/>
+  <text x="130" y="205" font-size="18" font-weight="bold" fill="white">Layer 3</text>
+  <text x="130" y="230" font-size="14" fill="white">TRANSPORT</text>
+  <text x="400" y="205" font-size="14" font-weight="bold" fill="white">TCP (Reliable), UDP (Fast)</text>
+  <text x="400" y="228" font-size="12" fill="#F0F0F0">TCP: Bank Transactions | UDP: VoIP, Video</text>
+
+  <!-- Layer 2 Internet -->
+  <rect x="100" y="270" width="600" height="80" rx="8" fill="url(#l2)" filter="url(#shadow)"/>
+  <text x="130" y="305" font-size="18" font-weight="bold" fill="white">Layer 2</text>
+  <text x="130" y="330" font-size="14" fill="white">INTERNET</text>
+  <text x="400" y="305" font-size="14" font-weight="bold" fill="white">IP, ICMP, ARP, OSPF, BGP</text>
+  <text x="400" y="328" font-size="12" fill="#F0F0F0">Routing between networks</text>
+
+  <!-- Layer 1 Network Access -->
+  <rect x="100" y="370" width="600" height="80" rx="8" fill="url(#l1)" filter="url(#shadow)"/>
+  <text x="130" y="405" font-size="18" font-weight="bold" fill="white">Layer 1</text>
+  <text x="130" y="430" font-size="14" fill="white">NETWORK ACCESS</text>
+  <text x="400" y="405" font-size="14" font-weight="bold" fill="white">Ethernet, Wi-Fi, PPP, Fiber</text>
+  <text x="400" y="428" font-size="12" fill="#F0F0F0">Switch, Access Point, Cable</text>
+
+  <!-- Encapsulation arrow -->
+  <line x1="60" y1="70" x2="60" y2="450" stroke="#2C3E50" stroke-width="3" marker-end="url(#arrow)"/>
+  <text x="30" y="260" font-size="12" font-weight="bold" fill="#2C3E50" transform="rotate(-90 30 260)">Encapsulation</text>
+
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#2C3E50"/>
+    </marker>
+  </defs>
+
+  <text x="400" y="480" text-anchor="middle" font-size="11" fill="#7F8C8D">Data flows from top to bottom (Sending) or bottom to top (Receiving)</text>
+</svg>

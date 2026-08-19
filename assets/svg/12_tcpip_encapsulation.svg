@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 600" font-family="Arial, sans-serif">
+  <defs>
+    <filter id="sh">
+      <feDropShadow dx="2" dy="3" stdDeviation="2" flood-opacity="0.25"/>
+    </filter>
+  </defs>
+
+  <rect width="1000" height="600" fill="#F4F6F7"/>
+
+  <text x="500" y="35" text-anchor="middle" font-size="22" font-weight="bold" fill="#2C3E50">TCP/IP Packet Encapsulation</text>
+  <text x="500" y="58" text-anchor="middle" font-size="13" fill="#7F8C8D">How Data is Wrapped Through Each Layer</text>
+
+  <!-- Layer 4 Application -->
+  <g>
+    <rect x="380" y="90" width="240" height="60" rx="6" fill="#8E44AD" filter="url(#sh)"/>
+    <text x="500" y="115" text-anchor="middle" font-size="14" font-weight="bold" fill="white">Application Data</text>
+    <text x="500" y="135" text-anchor="middle" font-size="11" fill="#E8DAEF">HTTPS Payload (JSON/HTML)</text>
+    <text x="230" y="125" text-anchor="end" font-size="11" font-weight="bold" fill="#8E44AD">Layer 4:</text>
+    <text x="230" y="140" text-anchor="end" font-size="10" fill="#7F8C8D">Application</text>
+  </g>
+
+  <line x1="500" y1="150" x2="500" y2="175" stroke="#34495E" stroke-width="2" marker-end="url(#down)"/>
+
+  <!-- Layer 3 Transport -->
+  <g>
+    <rect x="330" y="175" width="80" height="70" rx="6" fill="#2980B9" filter="url(#sh)"/>
+    <text x="370" y="200" text-anchor="middle" font-size="11" font-weight="bold" fill="white">TCP</text>
+    <text x="370" y="215" text-anchor="middle" font-size="9" fill="#D6EAF8">Header</text>
+    <text x="370" y="230" text-anchor="middle" font-size="9" fill="#D6EAF8">Port: 443</text>
+
+    <rect x="410" y="175" width="260" height="70" rx="6" fill="#8E44AD" filter="url(#sh)"/>
+    <text x="540" y="200" text-anchor="middle" font-size="12" font-weight="bold" fill="white">Application Data</text>
+    <text x="540" y="220" text-anchor="middle" font-size="10" fill="#E8DAEF">(Encrypted TLS Payload)</text>
+
+    <text x="230" y="212" text-anchor="end" font-size="11" font-weight="bold" fill="#2980B9">Layer 3:</text>
+    <text x="230" y="227" text-anchor="end" font-size="10" fill="#7F8C8D">Transport (TCP)</text>
+  </g>
+
+  <line x1="500" y1="245" x2="500" y2="270" stroke="#34495E" stroke-width="2" marker-end="url(#down)"/>
+
+  <!-- Layer 2 Internet -->
+  <g>
+    <rect x="280" y="270" width="80" height="70" rx="6" fill="#16A085" filter="url(#sh)"/>
+    <text x="320" y="295" text-anchor="middle" font-size="11" font-weight="bold" fill="white">IP</text>
+    <text x="320" y="310" text-anchor="middle" font-size="9" fill="#D1F2EB">Header</text>
+    <text x="320" y="325" text-anchor="middle" font-size="9" fill="#D1F2EB">Src/Dst IP</text>
+
+    <rect x="360" y="270" width="80" height="70" rx="6" fill="#2980B9" filter="url(#sh)"/>
+    <text x="400" y="295" text-anchor="middle" font-size="11" font-weight="bold" fill="white">TCP</text>
+    <text x="400" y="310" text-anchor="middle" font-size="9" fill="#D6EAF8">Header</text>
+
+    <rect x="440" y="270" width="280" height="70" rx="6" fill="#8E44AD" filter="url(#sh)"/>
+    <text x="580" y="295" text-anchor="middle" font-size="12" font-weight="bold" fill="white">Data</text>
+    <text x="580" y="315" text-anchor="middle" font-size="10" fill="#E8DAEF">(Encrypted Payload)</text>
+
+    <text x="230" y="307" text-anchor="end" font-size="11" font-weight="bold" fill="#16A085">Layer 2:</text>
+    <text x="230" y="322" text-anchor="end" font-size="10" fill="#7F8C8D">Internet (IP)</text>
+  </g>
+
+  <line x1="500" y1="340" x2="500" y2="365" stroke="#34495E" stroke-width="2" marker-end="url(#down)"/>
+
+  <!-- Layer 1 Network Access -->
+  <g>
+    <rect x="220" y="365" width="80" height="70" rx="6" fill="#E67E22" filter="url(#sh)"/>
+    <text x="260" y="390" text-anchor="middle" font-size="11" font-weight="bold" fill="white">Eth</text>
+    <text x="260" y="405" text-anchor="middle" font-size="9" fill="#FDEBD0">Header</text>
+    <text x="260" y="420" text-anchor="middle" font-size="9" fill="#FDEBD0">MAC + VLAN</text>
+
+    <rect x="300" y="365" width="80" height="70" rx="6" fill="#16A085" filter="url(#sh)"/>
+    <text x="340" y="390" text-anchor="middle" font-size="11" font-weight="bold" fill="white">IP</text>
+    <text x="340" y="405" text-anchor="middle" font-size="9" fill="#D1F2EB">Header</text>
+
+    <rect x="380" y="365" width="80" height="70" rx="6" fill="#2980B9" filter="url(#sh)"/>
+    <text x="420" y="390" text-anchor="middle" font-size="11" font-weight="bold" fill="white">TCP</text>
+    <text x="420" y="405" text-anchor="middle" font-size="9" fill="#D6EAF8">Header</text>
+
+    <rect x="460" y="365" width="240" height="70" rx="6" fill="#8E44AD" filter="url(#sh)"/>
+    <text x="580" y="395" text-anchor="middle" font-size="12" font-weight="bold" fill="white">Data</text>
+    <text x="580" y="415" text-anchor="middle" font-size="10" fill="#E8DAEF">(Encrypted Payload)</text>
+
+    <rect x="700" y="365" width="80" height="70" rx="6" fill="#E67E22" filter="url(#sh)"/>
+    <text x="740" y="390" text-anchor="middle" font-size="11" font-weight="bold" fill="white">FCS</text>
+    <text x="740" y="405" text-anchor="middle" font-size="9" fill="#FDEBD0">Trailer</text>
+    <text x="740" y="420" text-anchor="middle" font-size="9" fill="#FDEBD0">Checksum</text>
+
+    <text x="200" y="402" text-anchor="end" font-size="11" font-weight="bold" fill="#E67E22">Layer 1:</text>
+    <text x="200" y="417" text-anchor="end" font-size="10" fill="#7F8C8D">Network Access</text>
+    <text x="200" y="428" text-anchor="end" font-size="9" fill="#7F8C8D">(Ethernet)</text>
+  </g>
+
+  <line x1="500" y1="435" x2="500" y2="465" stroke="#34495E" stroke-width="2" marker-end="url(#down)"/>
+
+  <!-- Physical Medium -->
+  <g>
+    <rect x="150" y="465" width="700" height="55" rx="6" fill="#7F8C8D" filter="url(#sh)"/>
+    <text x="500" y="490" text-anchor="middle" font-size="14" font-weight="bold" fill="white">Physical Medium</text>
+    <text x="500" y="510" text-anchor="middle" font-size="10" fill="#EAEDED">Fiber Optic / Cat6a Copper / Wi-Fi Radio Signal</text>
+  </g>
+
+  <!-- Encapsulation arrow -->
+  <g>
+    <line x1="80" y1="100" x2="80" y2="470" stroke="#C0392B" stroke-width="4" marker-end="url(#down-big)"/>
+    <text x="45" y="270" font-size="12" font-weight="bold" fill="#C0392B" transform="rotate(-90 45 270)">Encapsulation (Sender)</text>
+  </g>
+
+  <line x1="900" y1="470" x2="900" y2="100" stroke="#27AE60" stroke-width="4" marker-end="url(#up-big)"/>
+  <text x="935" y="270" font-size="12" font-weight="bold" fill="#27AE60" transform="rotate(90 935 270)">Decapsulation (Receiver)</text>
+
+  <defs>
+    <marker id="down" markerWidth="10" markerHeight="10" refX="5" refY="9" orient="auto">
+      <polygon points="0 0, 5 9, 10 0" fill="#34495E"/>
+    </marker>
+    <marker id="down-big" markerWidth="12" markerHeight="12" refX="6" refY="11" orient="auto">
+      <polygon points="0 0, 6 11, 12 0" fill="#C0392B"/>
+    </marker>
+    <marker id="up-big" markerWidth="12" markerHeight="12" refX="6" refY="1" orient="auto">
+      <polygon points="0 12, 6 1, 12 12" fill="#27AE60"/>
+    </marker>
+  </defs>
+
+  <!-- Info -->
+  <rect x="60" y="540" width="880" height="50" rx="6" fill="white" stroke="#3498DB" stroke-width="1"/>
+  <text x="80" y="562" font-size="11" fill="#2C3E50"><tspan font-weight="bold">📦 Frame Size:</tspan> Ethernet MTU 1500 bytes (Standard) or 9000 bytes (Jumbo)</text>
+  <text x="80" y="580" font-size="11" fill="#2C3E50"><tspan font-weight="bold">🔍 Wireshark:</tspan> View any layer's header details for network troubleshooting</text>
+</svg>

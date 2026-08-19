@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 700" font-family="Arial, sans-serif">
+  <defs>
+    <filter id="sh">
+      <feDropShadow dx="2" dy="3" stdDeviation="3" flood-opacity="0.3"/>
+    </filter>
+    <radialGradient id="core-data" cx="50%" cy="50%">
+      <stop offset="0%" stop-color="#F1C40F"/>
+      <stop offset="100%" stop-color="#D4AC0D"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="900" height="700" fill="#F4F6F7"/>
+
+  <text x="450" y="35" text-anchor="middle" font-size="22" font-weight="bold" fill="#2C3E50">Defense in Depth Security Model</text>
+  <text x="450" y="58" text-anchor="middle" font-size="13" fill="#7F8C8D">Multi-Layer Protection (Concentric Rings)</text>
+
+  <!-- Concentric circles -->
+  <circle cx="450" cy="380" r="290" fill="#C0392B" opacity="0.9" filter="url(#sh)"/>
+  <circle cx="450" cy="380" r="240" fill="#E67E22" opacity="0.9"/>
+  <circle cx="450" cy="380" r="190" fill="#F39C12" opacity="0.9"/>
+  <circle cx="450" cy="380" r="140" fill="#3498DB" opacity="0.9"/>
+  <circle cx="450" cy="380" r="90" fill="#27AE60" opacity="0.9"/>
+  <circle cx="450" cy="380" r="45" fill="url(#core-data)"/>
+
+  <!-- Labels for each layer -->
+  <text x="450" y="120" text-anchor="middle" font-size="14" font-weight="bold" fill="white">🌐 PERIMETER SECURITY</text>
+  <text x="450" y="140" text-anchor="middle" font-size="11" fill="#FADBD8">NGFW + IPS + Anti-DDoS + WAF</text>
+
+  <text x="450" y="175" text-anchor="middle" font-size="13" font-weight="bold" fill="white">🏢 NETWORK SECURITY</text>
+  <text x="450" y="192" text-anchor="middle" font-size="10" fill="#FDEBD0">VLAN + ACL + Segmentation + NAC</text>
+
+  <text x="450" y="222" text-anchor="middle" font-size="12" font-weight="bold" fill="white">💻 ENDPOINT SECURITY</text>
+  <text x="450" y="238" text-anchor="middle" font-size="10" fill="#FEF5E7">CrowdStrike EDR + Patch Mgmt</text>
+
+  <text x="450" y="268" text-anchor="middle" font-size="12" font-weight="bold" fill="white">📱 APPLICATION SECURITY</text>
+  <text x="450" y="284" text-anchor="middle" font-size="10" fill="#D6EAF8">WAF + Code Review + Vuln Scan</text>
+
+  <text x="450" y="330" text-anchor="middle" font-size="12" font-weight="bold" fill="white">💾 DATA SECURITY</text>
+  <text x="450" y="346" text-anchor="middle" font-size="10" fill="#D5F5E3">Encryption + DLP + Backup</text>
+
+  <text x="450" y="378" text-anchor="middle" font-size="14" font-weight="bold" fill="#7D6608">🏦</text>
+  <text x="450" y="395" text-anchor="middle" font-size="10" font-weight="bold" fill="#7D6608">CRITICAL</text>
+  <text x="450" y="408" text-anchor="middle" font-size="9" fill="#7D6608">DATA</text>
+
+  <!-- Threat arrow -->
+  <g>
+    <line x1="80" y1="380" x2="150" y2="380" stroke="#C0392B" stroke-width="3" marker-end="url(#threat-arrow)"/>
+    <text x="115" y="370" text-anchor="middle" font-size="12" font-weight="bold" fill="#C0392B">Attack</text>
+  </g>
+
+  <defs>
+    <marker id="threat-arrow" markerWidth="12" markerHeight="12" refX="10" refY="4" orient="auto">
+      <polygon points="0 0, 12 4, 0 8" fill="#C0392B"/>
+    </marker>
+  </defs>
+
+  <!-- Legend/Detail on right side -->
+  <rect x="640" y="570" width="240" height="115" rx="6" fill="white" stroke="#BDC3C7" filter="url(#sh)"/>
+  <text x="760" y="590" text-anchor="middle" font-size="12" font-weight="bold" fill="#2C3E50">📋 Layer Details</text>
+  <g font-size="9" fill="#2C3E50">
+    <text x="650" y="608"><tspan fill="#C0392B" font-weight="bold">■</tspan> Perimeter — Fortigate 600F HA</text>
+    <text x="650" y="622"><tspan fill="#E67E22" font-weight="bold">■</tspan> Network — VLAN, ACL, DHCP Snoop</text>
+    <text x="650" y="636"><tspan fill="#F39C12" font-weight="bold">■</tspan> Endpoint — EDR, Antivirus, MFA</text>
+    <text x="650" y="650"><tspan fill="#3498DB" font-weight="bold">■</tspan> Application — WAF, SAST, DAST</text>
+    <text x="650" y="664"><tspan fill="#27AE60" font-weight="bold">■</tspan> Data — AES-256, TLS 1.3, Backup</text>
+    <text x="650" y="678"><tspan fill="#D4AC0D" font-weight="bold">■</tspan> Core — Bank Customer Data</text>
+  </g>
+
+  <!-- Zero Trust Principles -->
+  <rect x="20" y="570" width="240" height="115" rx="6" fill="white" stroke="#BDC3C7" filter="url(#sh)"/>
+  <text x="140" y="590" text-anchor="middle" font-size="12" font-weight="bold" fill="#2C3E50">🔐 Zero Trust Principles</text>
+  <g font-size="9" fill="#2C3E50">
+    <text x="30" y="608">1. Never Trust, Always Verify</text>
+    <text x="30" y="622">2. Least Privilege Access</text>
+    <text x="30" y="636">3. Assume Breach</text>
+    <text x="30" y="650">4. Multi-Factor Authentication</text>
+    <text x="30" y="664">5. Continuous Monitoring (SIEM)</text>
+    <text x="30" y="678">6. Micro-segmentation</text>
+  </g>
+
+  <!-- Compliance -->
+  <rect x="330" y="570" width="290" height="115" rx="6" fill="white" stroke="#BDC3C7" filter="url(#sh)"/>
+  <text x="475" y="590" text-anchor="middle" font-size="12" font-weight="bold" fill="#2C3E50">📋 Compliance Standards</text>
+  <g font-size="10" fill="#2C3E50">
+    <text x="345" y="610"><tspan font-weight="bold" fill="#C0392B">NBC</tspan> — ធនាគារជាតិកម្ពុជា Regulation</text>
+    <text x="345" y="628"><tspan font-weight="bold" fill="#C0392B">PCI-DSS v4.0</tspan> — Card Data Protection</text>
+    <text x="345" y="646"><tspan font-weight="bold" fill="#C0392B">ISO 27001</tspan> — Info Security Mgmt</text>
+    <text x="345" y="664"><tspan font-weight="bold" fill="#C0392B">SOC 2</tspan> — Service Organization Control</text>
+    <text x="345" y="678"><tspan font-weight="bold" fill="#C0392B">GDPR</tspan> — Data Privacy (if EU customers)</text>
+  </g>
+</svg>

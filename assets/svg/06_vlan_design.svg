@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 650" font-family="Arial, sans-serif">
+  <defs>
+    <filter id="sh">
+      <feDropShadow dx="2" dy="3" stdDeviation="2" flood-opacity="0.25"/>
+    </filter>
+  </defs>
+
+  <rect width="1000" height="650" fill="#F4F6F7"/>
+
+  <text x="500" y="35" text-anchor="middle" font-size="22" font-weight="bold" fill="#2C3E50">VLAN Design + Inter-VLAN Routing (Layer 2)</text>
+
+  <!-- Core Switch (L3) -->
+  <rect x="350" y="80" width="300" height="80" rx="8" fill="#1F618D" filter="url(#sh)"/>
+  <text x="500" y="110" text-anchor="middle" font-size="16" font-weight="bold" fill="white">CORE SWITCH (Layer 3)</text>
+  <text x="500" y="132" text-anchor="middle" font-size="12" fill="#D6EAF8">Inter-VLAN Routing (SVI)</text>
+  <text x="500" y="150" text-anchor="middle" font-size="11" fill="#D6EAF8">Cisco Nexus 9336 with VPC</text>
+
+  <!-- Connections down -->
+  <line x1="500" y1="160" x2="500" y2="195" stroke="#34495E" stroke-width="2"/>
+  <line x1="120" y1="195" x2="880" y2="195" stroke="#34495E" stroke-width="2"/>
+
+  <!-- VLAN Boxes -->
+  <g>
+    <line x1="120" y1="195" x2="120" y2="230" stroke="#34495E" stroke-width="2"/>
+    <rect x="60" y="230" width="120" height="140" rx="6" fill="#8E44AD" filter="url(#sh)"/>
+    <text x="120" y="252" text-anchor="middle" font-size="13" font-weight="bold" fill="white">VLAN 10</text>
+    <text x="120" y="270" text-anchor="middle" font-size="12" fill="#E8DAEF">MGMT</text>
+    <line x1="80" y1="278" x2="160" y2="278" stroke="#E8DAEF" stroke-width="1"/>
+    <text x="120" y="298" text-anchor="middle" font-size="10" fill="white">10.10.10.0/24</text>
+    <text x="120" y="315" text-anchor="middle" font-size="9" fill="#E8DAEF">Management</text>
+    <text x="120" y="330" text-anchor="middle" font-size="9" fill="#E8DAEF">50 Users</text>
+    <text x="120" y="355" text-anchor="middle" font-size="9" fill="#F1C40F">Admin Only</text>
+  </g>
+
+  <g>
+    <line x1="250" y1="195" x2="250" y2="230" stroke="#34495E" stroke-width="2"/>
+    <rect x="190" y="230" width="120" height="140" rx="6" fill="#27AE60" filter="url(#sh)"/>
+    <text x="250" y="252" text-anchor="middle" font-size="13" font-weight="bold" fill="white">VLAN 20</text>
+    <text x="250" y="270" text-anchor="middle" font-size="12" fill="#D5F5E3">SERVERS</text>
+    <line x1="210" y1="278" x2="290" y2="278" stroke="#D5F5E3" stroke-width="1"/>
+    <text x="250" y="298" text-anchor="middle" font-size="10" fill="white">10.10.20.0/24</text>
+    <text x="250" y="315" text-anchor="middle" font-size="9" fill="#D5F5E3">Core Banking</text>
+    <text x="250" y="330" text-anchor="middle" font-size="9" fill="#D5F5E3">Database</text>
+    <text x="250" y="355" text-anchor="middle" font-size="9" fill="#F1C40F">ACL Protected</text>
+  </g>
+
+  <g>
+    <line x1="380" y1="195" x2="380" y2="230" stroke="#34495E" stroke-width="2"/>
+    <rect x="320" y="230" width="120" height="140" rx="6" fill="#3498DB" filter="url(#sh)"/>
+    <text x="380" y="252" text-anchor="middle" font-size="13" font-weight="bold" fill="white">VLAN 30</text>
+    <text x="380" y="270" text-anchor="middle" font-size="12" fill="#D6EAF8">STAFF</text>
+    <line x1="340" y1="278" x2="420" y2="278" stroke="#D6EAF8" stroke-width="1"/>
+    <text x="380" y="298" text-anchor="middle" font-size="10" fill="white">10.10.30.0/23</text>
+    <text x="380" y="315" text-anchor="middle" font-size="9" fill="#D6EAF8">Staff PCs</text>
+    <text x="380" y="330" text-anchor="middle" font-size="9" fill="#D6EAF8">510 Users</text>
+    <text x="380" y="355" text-anchor="middle" font-size="9" fill="#F1C40F">Filtered</text>
+  </g>
+
+  <g>
+    <line x1="500" y1="195" x2="500" y2="230" stroke="#34495E" stroke-width="2"/>
+    <rect x="440" y="230" width="120" height="140" rx="6" fill="#E74C3C" filter="url(#sh)"/>
+    <text x="500" y="252" text-anchor="middle" font-size="13" font-weight="bold" fill="white">VLAN 40</text>
+    <text x="500" y="270" text-anchor="middle" font-size="12" fill="#FADBD8">ATM</text>
+    <line x1="460" y1="278" x2="540" y2="278" stroke="#FADBD8" stroke-width="1"/>
+    <text x="500" y="298" text-anchor="middle" font-size="10" fill="white">10.10.40.0/24</text>
+    <text x="500" y="315" text-anchor="middle" font-size="9" fill="#FADBD8">ATM Machines</text>
+    <text x="500" y="330" text-anchor="middle" font-size="9" fill="#FADBD8">17 Total</text>
+    <text x="500" y="355" text-anchor="middle" font-size="9" fill="#F1C40F">PCI-DSS Isolated</text>
+  </g>
+
+  <g>
+    <line x1="620" y1="195" x2="620" y2="230" stroke="#34495E" stroke-width="2"/>
+    <rect x="560" y="230" width="120" height="140" rx="6" fill="#F39C12" filter="url(#sh)"/>
+    <text x="620" y="252" text-anchor="middle" font-size="13" font-weight="bold" fill="white">VLAN 50</text>
+    <text x="620" y="270" text-anchor="middle" font-size="12" fill="#FDEBD0">VOIP</text>
+    <line x1="580" y1="278" x2="660" y2="278" stroke="#FDEBD0" stroke-width="1"/>
+    <text x="620" y="298" text-anchor="middle" font-size="10" fill="white">10.10.50.0/24</text>
+    <text x="620" y="315" text-anchor="middle" font-size="9" fill="#FDEBD0">IP Phones</text>
+    <text x="620" y="330" text-anchor="middle" font-size="9" fill="#FDEBD0">300 Users</text>
+    <text x="620" y="355" text-anchor="middle" font-size="9" fill="#F1C40F">QoS Priority</text>
+  </g>
+
+  <g>
+    <line x1="750" y1="195" x2="750" y2="230" stroke="#34495E" stroke-width="2"/>
+    <rect x="690" y="230" width="120" height="140" rx="6" fill="#16A085" filter="url(#sh)"/>
+    <text x="750" y="252" text-anchor="middle" font-size="13" font-weight="bold" fill="white">VLAN 60</text>
+    <text x="750" y="270" text-anchor="middle" font-size="12" fill="#D1F2EB">WIFI_CORP</text>
+    <line x1="710" y1="278" x2="790" y2="278" stroke="#D1F2EB" stroke-width="1"/>
+    <text x="750" y="298" text-anchor="middle" font-size="10" fill="white">10.10.60.0/24</text>
+    <text x="750" y="315" text-anchor="middle" font-size="9" fill="#D1F2EB">Wi-Fi Staff</text>
+    <text x="750" y="330" text-anchor="middle" font-size="9" fill="#D1F2EB">100 Users</text>
+    <text x="750" y="355" text-anchor="middle" font-size="9" fill="#F1C40F">WPA3-Ent</text>
+  </g>
+
+  <g>
+    <line x1="880" y1="195" x2="880" y2="230" stroke="#34495E" stroke-width="2"/>
+    <rect x="820" y="230" width="120" height="140" rx="6" fill="#95A5A6" filter="url(#sh)"/>
+    <text x="880" y="252" text-anchor="middle" font-size="13" font-weight="bold" fill="white">VLAN 70</text>
+    <text x="880" y="270" text-anchor="middle" font-size="12" fill="#ECF0F1">WIFI_GUEST</text>
+    <line x1="840" y1="278" x2="920" y2="278" stroke="#ECF0F1" stroke-width="1"/>
+    <text x="880" y="298" text-anchor="middle" font-size="10" fill="white">10.10.70.0/24</text>
+    <text x="880" y="315" text-anchor="middle" font-size="9" fill="#ECF0F1">Guest Wi-Fi</text>
+    <text x="880" y="330" text-anchor="middle" font-size="9" fill="#ECF0F1">100 Users</text>
+    <text x="880" y="355" text-anchor="middle" font-size="9" fill="#F1C40F">Internet Only</text>
+  </g>
+
+  <!-- Inter-VLAN Routing Flow -->
+  <rect x="60" y="400" width="880" height="220" rx="8" fill="white" stroke="#3498DB" stroke-width="2" filter="url(#sh)"/>
+  <text x="500" y="425" text-anchor="middle" font-size="16" font-weight="bold" fill="#2C3E50">🔄 Inter-VLAN Routing Flow (Staff → Server Example)</text>
+  <line x1="80" y1="435" x2="920" y2="435" stroke="#BDC3C7"/>
+
+  <!-- Flow steps -->
+  <g>
+    <rect x="80" y="455" width="140" height="60" rx="6" fill="#3498DB"/>
+    <text x="150" y="480" text-anchor="middle" font-size="11" font-weight="bold" fill="white">1. Staff PC</text>
+    <text x="150" y="497" text-anchor="middle" font-size="10" fill="white">10.10.30.10</text>
+    <text x="150" y="510" text-anchor="middle" font-size="9" fill="#D6EAF8">VLAN 30</text>
+
+    <polygon points="220,485 240,485 240,478 255,490 240,502 240,495 220,495" fill="#7F8C8D"/>
+
+    <rect x="260" y="455" width="140" height="60" rx="6" fill="#7F8C8D"/>
+    <text x="330" y="480" text-anchor="middle" font-size="11" font-weight="bold" fill="white">2. Access SW</text>
+    <text x="330" y="497" text-anchor="middle" font-size="10" fill="white">802.1Q Tag</text>
+    <text x="330" y="510" text-anchor="middle" font-size="9" fill="#ECF0F1">Trunk</text>
+
+    <polygon points="400,485 420,485 420,478 435,490 420,502 420,495 400,495" fill="#7F8C8D"/>
+
+    <rect x="440" y="455" width="140" height="60" rx="6" fill="#1F618D"/>
+    <text x="510" y="480" text-anchor="middle" font-size="11" font-weight="bold" fill="white">3. Core Switch (L3)</text>
+    <text x="510" y="497" text-anchor="middle" font-size="10" fill="white">SVI Vlan30 → Vlan20</text>
+    <text x="510" y="510" text-anchor="middle" font-size="9" fill="#D6EAF8">Route Decision</text>
+
+    <polygon points="580,485 600,485 600,478 615,490 600,502 600,495 580,495" fill="#7F8C8D"/>
+
+    <rect x="620" y="455" width="140" height="60" rx="6" fill="#7F8C8D"/>
+    <text x="690" y="480" text-anchor="middle" font-size="11" font-weight="bold" fill="white">4. Access SW</text>
+    <text x="690" y="497" text-anchor="middle" font-size="10" fill="white">VLAN 20 Trunk</text>
+    <text x="690" y="510" text-anchor="middle" font-size="9" fill="#ECF0F1">Untag → Port</text>
+
+    <polygon points="760,485 780,485 780,478 795,490 780,502 780,495 760,495" fill="#7F8C8D"/>
+
+    <rect x="800" y="455" width="130" height="60" rx="6" fill="#27AE60"/>
+    <text x="865" y="480" text-anchor="middle" font-size="11" font-weight="bold" fill="white">5. Server</text>
+    <text x="865" y="497" text-anchor="middle" font-size="10" fill="white">10.10.20.10</text>
+    <text x="865" y="510" text-anchor="middle" font-size="9" fill="#D5F5E3">VLAN 20</text>
+  </g>
+
+  <!-- Security Note -->
+  <g font-size="11">
+    <text x="80" y="545" font-weight="bold" fill="#C0392B">🔒 Security:</text>
+    <text x="170" y="545" fill="#2C3E50">Native VLAN 99 | DHCP Snooping | ARP Inspection | Port Security | BPDU Guard</text>
+    <text x="80" y="570" font-weight="bold" fill="#27AE60">✅ Benefits:</text>
+    <text x="170" y="570" fill="#2C3E50">Broadcast reduction | Traffic isolation | Flexible IP assignment</text>
+    <text x="80" y="595" font-weight="bold" fill="#8E44AD">📋 Compliance:</text>
+    <text x="180" y="595" fill="#2C3E50">ATM VLAN isolated for PCI-DSS | Guest Wi-Fi isolated from internal</text>
+  </g>
+</svg>

@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 650" font-family="Arial, sans-serif">
+  <defs>
+    <filter id="sh">
+      <feDropShadow dx="2" dy="3" stdDeviation="2" flood-opacity="0.25"/>
+    </filter>
+  </defs>
+
+  <rect width="1000" height="650" fill="#F4F6F7"/>
+
+  <text x="500" y="35" text-anchor="middle" font-size="22" font-weight="bold" fill="#2C3E50">High Availability &amp; Failover Design</text>
+  <text x="500" y="58" text-anchor="middle" font-size="13" fill="#7F8C8D">99.99% Uptime — Failover &lt; 30 seconds</text>
+
+  <!-- ACTIVE PATH -->
+  <text x="250" y="95" text-anchor="middle" font-size="16" font-weight="bold" fill="#27AE60">✅ ACTIVE PATH (Primary)</text>
+
+  <!-- ISP-1 -->
+  <ellipse cx="250" cy="130" rx="70" ry="25" fill="#27AE60" filter="url(#sh)"/>
+  <text x="250" y="128" text-anchor="middle" font-size="12" font-weight="bold" fill="white">ISP-1 Metfone</text>
+  <text x="250" y="143" text-anchor="middle" font-size="9" fill="white">Primary Link</text>
+
+  <line x1="250" y1="155" x2="250" y2="185" stroke="#27AE60" stroke-width="3"/>
+
+  <rect x="180" y="185" width="140" height="45" rx="6" fill="#27AE60" filter="url(#sh)"/>
+  <text x="250" y="210" text-anchor="middle" font-size="12" font-weight="bold" fill="white">Edge Router-1</text>
+  <text x="250" y="225" text-anchor="middle" font-size="10" fill="#D5F5E3">ASR 1001-HX</text>
+
+  <line x1="250" y1="230" x2="250" y2="260" stroke="#27AE60" stroke-width="3"/>
+
+  <rect x="180" y="260" width="140" height="45" rx="6" fill="#27AE60" filter="url(#sh)"/>
+  <text x="250" y="285" text-anchor="middle" font-size="12" font-weight="bold" fill="white">Firewall-1 ACTIVE</text>
+  <text x="250" y="300" text-anchor="middle" font-size="10" fill="#D5F5E3">Fortigate 600F</text>
+
+  <line x1="250" y1="305" x2="250" y2="335" stroke="#27AE60" stroke-width="3"/>
+
+  <rect x="180" y="335" width="140" height="45" rx="6" fill="#27AE60" filter="url(#sh)"/>
+  <text x="250" y="360" text-anchor="middle" font-size="12" font-weight="bold" fill="white">Core-SW-1 ACTIVE</text>
+  <text x="250" y="375" text-anchor="middle" font-size="10" fill="#D5F5E3">Nexus 9336 VPC</text>
+
+  <line x1="250" y1="380" x2="250" y2="410" stroke="#27AE60" stroke-width="3"/>
+
+  <rect x="180" y="410" width="140" height="45" rx="6" fill="#1F618D" filter="url(#sh)"/>
+  <text x="250" y="435" text-anchor="middle" font-size="12" font-weight="bold" fill="white">Users / Servers</text>
+  <text x="250" y="450" text-anchor="middle" font-size="10" fill="#D6EAF8">Traffic Flow ✅</text>
+
+  <!-- STANDBY PATH -->
+  <text x="750" y="95" text-anchor="middle" font-size="16" font-weight="bold" fill="#E67E22">⏸ STANDBY PATH (Backup)</text>
+
+  <ellipse cx="750" cy="130" rx="70" ry="25" fill="#E67E22" opacity="0.7" filter="url(#sh)"/>
+  <text x="750" y="128" text-anchor="middle" font-size="12" font-weight="bold" fill="white">ISP-2 Cellcard</text>
+  <text x="750" y="143" text-anchor="middle" font-size="9" fill="white">Backup Link</text>
+
+  <line x1="750" y1="155" x2="750" y2="185" stroke="#E67E22" stroke-width="3" stroke-dasharray="5,3"/>
+
+  <rect x="680" y="185" width="140" height="45" rx="6" fill="#E67E22" opacity="0.7" filter="url(#sh)"/>
+  <text x="750" y="210" text-anchor="middle" font-size="12" font-weight="bold" fill="white">Edge Router-2</text>
+  <text x="750" y="225" text-anchor="middle" font-size="10" fill="#FDEBD0">HSRP Standby</text>
+
+  <line x1="750" y1="230" x2="750" y2="260" stroke="#E67E22" stroke-width="3" stroke-dasharray="5,3"/>
+
+  <rect x="680" y="260" width="140" height="45" rx="6" fill="#E67E22" opacity="0.7" filter="url(#sh)"/>
+  <text x="750" y="285" text-anchor="middle" font-size="12" font-weight="bold" fill="white">Firewall-2 STANDBY</text>
+  <text x="750" y="300" text-anchor="middle" font-size="10" fill="#FDEBD0">HA Pair Ready</text>
+
+  <line x1="750" y1="305" x2="750" y2="335" stroke="#E67E22" stroke-width="3" stroke-dasharray="5,3"/>
+
+  <rect x="680" y="335" width="140" height="45" rx="6" fill="#E67E22" opacity="0.7" filter="url(#sh)"/>
+  <text x="750" y="360" text-anchor="middle" font-size="12" font-weight="bold" fill="white">Core-SW-2 STANDBY</text>
+  <text x="750" y="375" text-anchor="middle" font-size="10" fill="#FDEBD0">VPC Peer Ready</text>
+
+  <line x1="750" y1="380" x2="750" y2="410" stroke="#E67E22" stroke-width="3" stroke-dasharray="5,3"/>
+
+  <rect x="680" y="410" width="140" height="45" rx="6" fill="#1F618D" opacity="0.5" filter="url(#sh)"/>
+  <text x="750" y="435" text-anchor="middle" font-size="12" font-weight="bold" fill="white">Users / Servers</text>
+  <text x="750" y="450" text-anchor="middle" font-size="10" fill="#D6EAF8">Standby ⏸</text>
+
+  <!-- HA Sync lines (horizontal) -->
+  <line x1="320" y1="207" x2="680" y2="207" stroke="#C0392B" stroke-width="2" stroke-dasharray="3,3"/>
+  <text x="500" y="200" text-anchor="middle" font-size="10" font-weight="bold" fill="#C0392B">HSRP</text>
+
+  <line x1="320" y1="282" x2="680" y2="282" stroke="#C0392B" stroke-width="2" stroke-dasharray="3,3"/>
+  <text x="500" y="275" text-anchor="middle" font-size="10" font-weight="bold" fill="#C0392B">HA Sync</text>
+
+  <line x1="320" y1="357" x2="680" y2="357" stroke="#8E44AD" stroke-width="2" stroke-dasharray="3,3"/>
+  <text x="500" y="350" text-anchor="middle" font-size="10" font-weight="bold" fill="#8E44AD">VPC Peer</text>
+
+  <!-- Failover Flow -->
+  <rect x="50" y="490" width="900" height="140" rx="8" fill="white" stroke="#3498DB" stroke-width="2" filter="url(#sh)"/>
+  <text x="500" y="515" text-anchor="middle" font-size="16" font-weight="bold" fill="#2C3E50">🔄 Failover Sequence (Automatic)</text>
+  <line x1="70" y1="525" x2="930" y2="525" stroke="#BDC3C7"/>
+
+  <g font-size="11" fill="white">
+    <rect x="80" y="540" width="140" height="60" rx="6" fill="#C0392B"/>
+    <text x="150" y="562" text-anchor="middle" font-weight="bold">1. Detection</text>
+    <text x="150" y="578" text-anchor="middle" font-size="10">BFD/Hello Fail</text>
+    <text x="150" y="592" text-anchor="middle" font-size="10">&lt; 3 sec</text>
+
+    <polygon points="220,570 240,570 240,563 255,575 240,587 240,580 220,580" fill="#7F8C8D"/>
+
+    <rect x="260" y="540" width="140" height="60" rx="6" fill="#E67E22"/>
+    <text x="330" y="562" text-anchor="middle" font-weight="bold">2. Notification</text>
+    <text x="330" y="578" text-anchor="middle" font-size="10">Alert SIEM + NOC</text>
+    <text x="330" y="592" text-anchor="middle" font-size="10">SMS + Email</text>
+
+    <polygon points="400,570 420,570 420,563 435,575 420,587 420,580 400,580" fill="#7F8C8D"/>
+
+    <rect x="440" y="540" width="140" height="60" rx="6" fill="#F39C12"/>
+    <text x="510" y="562" text-anchor="middle" font-weight="bold">3. Switch Over</text>
+    <text x="510" y="578" text-anchor="middle" font-size="10">Standby → Active</text>
+    <text x="510" y="592" text-anchor="middle" font-size="10">HSRP / HA</text>
+
+    <polygon points="580,570 600,570 600,563 615,575 600,587 600,580 580,580" fill="#7F8C8D"/>
+
+    <rect x="620" y="540" width="140" height="60" rx="6" fill="#27AE60"/>
+    <text x="690" y="562" text-anchor="middle" font-weight="bold">4. Traffic Resume</text>
+    <text x="690" y="578" text-anchor="middle" font-size="10">Zero user impact</text>
+    <text x="690" y="592" text-anchor="middle" font-size="10">&lt; 30 sec total</text>
+
+    <polygon points="760,570 780,570 780,563 795,575 780,587 780,580 760,580" fill="#7F8C8D"/>
+
+    <rect x="800" y="540" width="130" height="60" rx="6" fill="#3498DB"/>
+    <text x="865" y="562" text-anchor="middle" font-weight="bold">5. Monitor</text>
+    <text x="865" y="578" text-anchor="middle" font-size="10">Verify + Fix</text>
+    <text x="865" y="592" text-anchor="middle" font-size="10">Root Cause</text>
+  </g>
+
+  <text x="500" y="625" text-anchor="middle" font-size="11" fill="#7F8C8D" font-style="italic">RTO: 4 hours | RPO: 15 minutes | Uptime SLA: 99.99% (&lt; 52 min/year downtime)</text>
+</svg>

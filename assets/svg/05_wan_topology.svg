@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 700" font-family="Arial, sans-serif">
+  <defs>
+    <linearGradient id="ho" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1F618D"/>
+      <stop offset="100%" stop-color="#2E86C1"/>
+    </linearGradient>
+    <linearGradient id="cloud" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#8E44AD"/>
+      <stop offset="100%" stop-color="#7D3C98"/>
+    </linearGradient>
+    <linearGradient id="branch" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#229954"/>
+      <stop offset="100%" stop-color="#1E8449"/>
+    </linearGradient>
+    <filter id="sh">
+      <feDropShadow dx="2" dy="3" stdDeviation="3" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+
+  <rect width="1000" height="700" fill="#F4F6F7"/>
+
+  <text x="500" y="35" text-anchor="middle" font-size="22" font-weight="bold" fill="#2C3E50">WAN Topology - Multi-Site Connectivity</text>
+  <text x="500" y="58" text-anchor="middle" font-size="13" fill="#7F8C8D">Head Office + 5 Branches (Cambodia)</text>
+
+  <!-- Head Office -->
+  <rect x="350" y="90" width="300" height="120" rx="12" fill="url(#ho)" filter="url(#sh)"/>
+  <text x="500" y="120" text-anchor="middle" font-size="18" font-weight="bold" fill="white">HEAD OFFICE</text>
+  <text x="500" y="142" text-anchor="middle" font-size="14" fill="white">ភ្នំពេញ (Phnom Penh)</text>
+  <text x="500" y="165" text-anchor="middle" font-size="12" fill="#D6EAF8">R-EDGE Router | BGP AS 65001</text>
+  <text x="500" y="185" text-anchor="middle" font-size="12" fill="#D6EAF8">10.10.0.0/16 | 300 Staff</text>
+  <text x="500" y="202" text-anchor="middle" font-size="11" fill="#AED6F1">Core Banking, DMZ, Servers</text>
+
+  <!-- Down arrows to cloud -->
+  <line x1="450" y1="210" x2="450" y2="245" stroke="#34495E" stroke-width="3"/>
+  <text x="430" y="230" font-size="10" fill="#27AE60" font-weight="bold">Primary</text>
+  <text x="430" y="245" font-size="9" fill="#27AE60">MPLS 100M</text>
+
+  <line x1="550" y1="210" x2="550" y2="245" stroke="#C0392B" stroke-width="3" stroke-dasharray="5,3"/>
+  <text x="560" y="230" font-size="10" fill="#C0392B" font-weight="bold">Backup</text>
+  <text x="560" y="245" font-size="9" fill="#C0392B">4G/LTE</text>
+
+  <!-- MPLS Cloud -->
+  <ellipse cx="500" cy="290" rx="150" ry="45" fill="url(#cloud)" filter="url(#sh)"/>
+  <text x="500" y="285" text-anchor="middle" font-size="16" font-weight="bold" fill="white">MPLS Cloud</text>
+  <text x="500" y="305" text-anchor="middle" font-size="12" fill="#E8DAEF">Metfone Business</text>
+  <text x="500" y="322" text-anchor="middle" font-size="10" fill="#E8DAEF">IPsec VPN AES-256 | SLA 99.9%</text>
+
+  <!-- Lines to branches -->
+  <line x1="500" y1="335" x2="500" y2="380" stroke="#34495E" stroke-width="2"/>
+  <line x1="130" y1="380" x2="870" y2="380" stroke="#34495E" stroke-width="2"/>
+  <line x1="130" y1="380" x2="130" y2="425" stroke="#34495E" stroke-width="2"/>
+  <line x1="315" y1="380" x2="315" y2="425" stroke="#34495E" stroke-width="2"/>
+  <line x1="500" y1="380" x2="500" y2="425" stroke="#34495E" stroke-width="2"/>
+  <line x1="685" y1="380" x2="685" y2="425" stroke="#34495E" stroke-width="2"/>
+  <line x1="870" y1="380" x2="870" y2="425" stroke="#34495E" stroke-width="2"/>
+
+  <!-- Branch: Siem Reap -->
+  <rect x="60" y="425" width="140" height="130" rx="8" fill="url(#branch)" filter="url(#sh)"/>
+  <text x="130" y="450" text-anchor="middle" font-size="14" font-weight="bold" fill="white">សៀមរាប</text>
+  <text x="130" y="468" text-anchor="middle" font-size="11" fill="#D5F5E3">Siem Reap</text>
+  <text x="130" y="490" text-anchor="middle" font-size="11" fill="white">10.20.0.0/16</text>
+  <text x="130" y="507" text-anchor="middle" font-size="10" fill="#D5F5E3">50 Staff | 3 ATMs</text>
+  <text x="130" y="522" text-anchor="middle" font-size="10" fill="#D5F5E3">Cisco ISR 4331</text>
+  <text x="130" y="540" text-anchor="middle" font-size="9" fill="#ABEBC6">P2P: 172.16.1.0/30</text>
+
+  <!-- Branch: Battambang -->
+  <rect x="245" y="425" width="140" height="130" rx="8" fill="url(#branch)" filter="url(#sh)"/>
+  <text x="315" y="450" text-anchor="middle" font-size="14" font-weight="bold" fill="white">បាត់ដំបង</text>
+  <text x="315" y="468" text-anchor="middle" font-size="11" fill="#D5F5E3">Battambang</text>
+  <text x="315" y="490" text-anchor="middle" font-size="11" fill="white">10.30.0.0/16</text>
+  <text x="315" y="507" text-anchor="middle" font-size="10" fill="#D5F5E3">50 Staff | 3 ATMs</text>
+  <text x="315" y="522" text-anchor="middle" font-size="10" fill="#D5F5E3">Cisco ISR 4331</text>
+  <text x="315" y="540" text-anchor="middle" font-size="9" fill="#ABEBC6">P2P: 172.16.1.4/30</text>
+
+  <!-- Branch: Kampong Cham -->
+  <rect x="430" y="425" width="140" height="130" rx="8" fill="url(#branch)" filter="url(#sh)"/>
+  <text x="500" y="450" text-anchor="middle" font-size="14" font-weight="bold" fill="white">កំពង់ចាម</text>
+  <text x="500" y="468" text-anchor="middle" font-size="11" fill="#D5F5E3">Kampong Cham</text>
+  <text x="500" y="490" text-anchor="middle" font-size="11" fill="white">10.40.0.0/16</text>
+  <text x="500" y="507" text-anchor="middle" font-size="10" fill="#D5F5E3">25 Staff | 2 ATMs</text>
+  <text x="500" y="522" text-anchor="middle" font-size="10" fill="#D5F5E3">Cisco ISR 4331</text>
+  <text x="500" y="540" text-anchor="middle" font-size="9" fill="#ABEBC6">P2P: 172.16.1.8/30</text>
+
+  <!-- Branch: Sihanoukville -->
+  <rect x="615" y="425" width="140" height="130" rx="8" fill="url(#branch)" filter="url(#sh)"/>
+  <text x="685" y="450" text-anchor="middle" font-size="14" font-weight="bold" fill="white">ព្រះសីហនុ</text>
+  <text x="685" y="468" text-anchor="middle" font-size="11" fill="#D5F5E3">Sihanoukville</text>
+  <text x="685" y="490" text-anchor="middle" font-size="11" fill="white">10.50.0.0/16</text>
+  <text x="685" y="507" text-anchor="middle" font-size="10" fill="#D5F5E3">25 Staff | 2 ATMs</text>
+  <text x="685" y="522" text-anchor="middle" font-size="10" fill="#D5F5E3">Cisco ISR 4331</text>
+  <text x="685" y="540" text-anchor="middle" font-size="9" fill="#ABEBC6">P2P: 172.16.1.12/30</text>
+
+  <!-- Branch: Kampot -->
+  <rect x="800" y="425" width="140" height="130" rx="8" fill="url(#branch)" filter="url(#sh)"/>
+  <text x="870" y="450" text-anchor="middle" font-size="14" font-weight="bold" fill="white">កំពត</text>
+  <text x="870" y="468" text-anchor="middle" font-size="11" fill="#D5F5E3">Kampot</text>
+  <text x="870" y="490" text-anchor="middle" font-size="11" fill="white">10.60.0.0/16</text>
+  <text x="870" y="507" text-anchor="middle" font-size="10" fill="#D5F5E3">25 Staff | 2 ATMs</text>
+  <text x="870" y="522" text-anchor="middle" font-size="10" fill="#D5F5E3">Cisco ISR 4331</text>
+  <text x="870" y="540" text-anchor="middle" font-size="9" fill="#ABEBC6">P2P: 172.16.1.16/30</text>
+
+  <!-- SLA Info -->
+  <rect x="150" y="595" width="700" height="80" rx="8" fill="white" stroke="#3498DB" stroke-width="2"/>
+  <text x="500" y="618" text-anchor="middle" font-size="14" font-weight="bold" fill="#2C3E50">📊 Performance &amp; SLA</text>
+  <g font-size="11" fill="#2C3E50">
+    <text x="180" y="640" font-weight="bold">Bandwidth:</text><text x="260" y="640">100 Mbps</text>
+    <text x="370" y="640" font-weight="bold">Latency:</text><text x="440" y="640">&lt; 50 ms</text>
+    <text x="560" y="640" font-weight="bold">Uptime:</text><text x="625" y="640">99.9%</text>
+    <text x="720" y="640" font-weight="bold">Failover:</text><text x="790" y="640">&lt; 30s</text>
+
+    <text x="180" y="660" font-weight="bold">Encryption:</text><text x="270" y="660">IPsec AES-256</text>
+    <text x="400" y="660" font-weight="bold">Hashing:</text><text x="470" y="660">SHA-256</text>
+    <text x="580" y="660" font-weight="bold">DH Group:</text><text x="660" y="660">14 (2048-bit)</text>
+  </g>
+</svg>

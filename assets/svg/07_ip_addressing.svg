@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 700" font-family="Arial, sans-serif">
+  <defs>
+    <filter id="sh">
+      <feDropShadow dx="2" dy="3" stdDeviation="2" flood-opacity="0.25"/>
+    </filter>
+  </defs>
+
+  <rect width="1000" height="700" fill="#F4F6F7"/>
+
+  <text x="500" y="35" text-anchor="middle" font-size="22" font-weight="bold" fill="#2C3E50">IP Addressing Scheme (Layer 3)</text>
+  <text x="500" y="58" text-anchor="middle" font-size="13" fill="#7F8C8D">RFC 1918 Private Address Space</text>
+
+  <!-- Master Block -->
+  <rect x="350" y="80" width="300" height="60" rx="8" fill="#1F618D" filter="url(#sh)"/>
+  <text x="500" y="110" text-anchor="middle" font-size="18" font-weight="bold" fill="white">10.0.0.0/8</text>
+  <text x="500" y="128" text-anchor="middle" font-size="11" fill="#D6EAF8">Master Enterprise Block (16M IPs)</text>
+
+  <!-- Distribution lines -->
+  <line x1="500" y1="140" x2="500" y2="170" stroke="#34495E" stroke-width="2"/>
+  <line x1="130" y1="170" x2="870" y2="170" stroke="#34495E" stroke-width="2"/>
+
+  <!-- Six Site Blocks -->
+  <g font-size="10">
+    <line x1="130" y1="170" x2="130" y2="200" stroke="#34495E" stroke-width="2"/>
+    <rect x="70" y="200" width="120" height="90" rx="6" fill="#2874A6" filter="url(#sh)"/>
+    <text x="130" y="222" text-anchor="middle" font-size="14" font-weight="bold" fill="white">HO</text>
+    <text x="130" y="240" text-anchor="middle" font-size="10" fill="#D6EAF8">ភ្នំពេញ</text>
+    <line x1="90" y1="248" x2="170" y2="248" stroke="#D6EAF8"/>
+    <text x="130" y="265" text-anchor="middle" font-weight="bold" fill="white">10.10.0.0/16</text>
+    <text x="130" y="280" text-anchor="middle" fill="#D6EAF8">65,534 IPs</text>
+
+    <line x1="278" y1="170" x2="278" y2="200" stroke="#34495E" stroke-width="2"/>
+    <rect x="220" y="200" width="120" height="90" rx="6" fill="#229954" filter="url(#sh)"/>
+    <text x="278" y="222" text-anchor="middle" font-size="14" font-weight="bold" fill="white">SR</text>
+    <text x="278" y="240" text-anchor="middle" font-size="10" fill="#D5F5E3">សៀមរាប</text>
+    <line x1="240" y1="248" x2="320" y2="248" stroke="#D5F5E3"/>
+    <text x="278" y="265" text-anchor="middle" font-weight="bold" fill="white">10.20.0.0/16</text>
+    <text x="278" y="280" text-anchor="middle" fill="#D5F5E3">65,534 IPs</text>
+
+    <line x1="425" y1="170" x2="425" y2="200" stroke="#34495E" stroke-width="2"/>
+    <rect x="365" y="200" width="120" height="90" rx="6" fill="#229954" filter="url(#sh)"/>
+    <text x="425" y="222" text-anchor="middle" font-size="14" font-weight="bold" fill="white">BB</text>
+    <text x="425" y="240" text-anchor="middle" font-size="10" fill="#D5F5E3">បាត់ដំបង</text>
+    <line x1="385" y1="248" x2="465" y2="248" stroke="#D5F5E3"/>
+    <text x="425" y="265" text-anchor="middle" font-weight="bold" fill="white">10.30.0.0/16</text>
+    <text x="425" y="280" text-anchor="middle" fill="#D5F5E3">65,534 IPs</text>
+
+    <line x1="575" y1="170" x2="575" y2="200" stroke="#34495E" stroke-width="2"/>
+    <rect x="515" y="200" width="120" height="90" rx="6" fill="#229954" filter="url(#sh)"/>
+    <text x="575" y="222" text-anchor="middle" font-size="14" font-weight="bold" fill="white">KC</text>
+    <text x="575" y="240" text-anchor="middle" font-size="10" fill="#D5F5E3">កំពង់ចាម</text>
+    <line x1="535" y1="248" x2="615" y2="248" stroke="#D5F5E3"/>
+    <text x="575" y="265" text-anchor="middle" font-weight="bold" fill="white">10.40.0.0/16</text>
+    <text x="575" y="280" text-anchor="middle" fill="#D5F5E3">65,534 IPs</text>
+
+    <line x1="725" y1="170" x2="725" y2="200" stroke="#34495E" stroke-width="2"/>
+    <rect x="665" y="200" width="120" height="90" rx="6" fill="#229954" filter="url(#sh)"/>
+    <text x="725" y="222" text-anchor="middle" font-size="14" font-weight="bold" fill="white">SH</text>
+    <text x="725" y="240" text-anchor="middle" font-size="10" fill="#D5F5E3">ព្រះសីហនុ</text>
+    <line x1="685" y1="248" x2="765" y2="248" stroke="#D5F5E3"/>
+    <text x="725" y="265" text-anchor="middle" font-weight="bold" fill="white">10.50.0.0/16</text>
+    <text x="725" y="280" text-anchor="middle" fill="#D5F5E3">65,534 IPs</text>
+
+    <line x1="870" y1="170" x2="870" y2="200" stroke="#34495E" stroke-width="2"/>
+    <rect x="810" y="200" width="120" height="90" rx="6" fill="#229954" filter="url(#sh)"/>
+    <text x="870" y="222" text-anchor="middle" font-size="14" font-weight="bold" fill="white">KP</text>
+    <text x="870" y="240" text-anchor="middle" font-size="10" fill="#D5F5E3">កំពត</text>
+    <line x1="830" y1="248" x2="910" y2="248" stroke="#D5F5E3"/>
+    <text x="870" y="265" text-anchor="middle" font-weight="bold" fill="white">10.60.0.0/16</text>
+    <text x="870" y="280" text-anchor="middle" fill="#D5F5E3">65,534 IPs</text>
+  </g>
+
+  <!-- HO Detail VLAN Breakdown -->
+  <rect x="50" y="320" width="900" height="230" rx="8" fill="white" stroke="#3498DB" stroke-width="2" filter="url(#sh)"/>
+  <text x="500" y="345" text-anchor="middle" font-size="16" font-weight="bold" fill="#2C3E50">Head Office Subnetting (10.10.0.0/16 → VLANs)</text>
+  <line x1="70" y1="355" x2="930" y2="355" stroke="#BDC3C7"/>
+
+  <!-- Column Headers -->
+  <g font-size="11" font-weight="bold" fill="white">
+    <rect x="70" y="365" width="80" height="30" fill="#2C3E50"/>
+    <text x="110" y="385" text-anchor="middle">VLAN</text>
+
+    <rect x="150" y="365" width="130" height="30" fill="#2C3E50"/>
+    <text x="215" y="385" text-anchor="middle">Name</text>
+
+    <rect x="280" y="365" width="150" height="30" fill="#2C3E50"/>
+    <text x="355" y="385" text-anchor="middle">Subnet</text>
+
+    <rect x="430" y="365" width="200" height="30" fill="#2C3E50"/>
+    <text x="530" y="385" text-anchor="middle">Range</text>
+
+    <rect x="630" y="365" width="120" height="30" fill="#2C3E50"/>
+    <text x="690" y="385" text-anchor="middle">Gateway</text>
+
+    <rect x="750" y="365" width="180" height="30" fill="#2C3E50"/>
+    <text x="840" y="385" text-anchor="middle">Purpose</text>
+  </g>
+
+  <g font-size="10" fill="#2C3E50">
+    <rect x="70" y="395" width="80" height="22" fill="#E8DAEF"/><text x="110" y="410" text-anchor="middle">10</text>
+    <rect x="150" y="395" width="130" height="22" fill="#F8F9F9"/><text x="215" y="410" text-anchor="middle">MGMT</text>
+    <rect x="280" y="395" width="150" height="22" fill="#F8F9F9"/><text x="355" y="410" text-anchor="middle">10.10.10.0/24</text>
+    <rect x="430" y="395" width="200" height="22" fill="#F8F9F9"/><text x="530" y="410" text-anchor="middle">10.10.10.1 - 254</text>
+    <rect x="630" y="395" width="120" height="22" fill="#F8F9F9"/><text x="690" y="410" text-anchor="middle">10.10.10.1</text>
+    <rect x="750" y="395" width="180" height="22" fill="#F8F9F9"/><text x="840" y="410" text-anchor="middle">Management</text>
+
+    <rect x="70" y="417" width="80" height="22" fill="#D5F5E3"/><text x="110" y="432" text-anchor="middle">20</text>
+    <rect x="150" y="417" width="130" height="22" fill="#EAEDED"/><text x="215" y="432" text-anchor="middle">SERVERS</text>
+    <rect x="280" y="417" width="150" height="22" fill="#EAEDED"/><text x="355" y="432" text-anchor="middle">10.10.20.0/24</text>
+    <rect x="430" y="417" width="200" height="22" fill="#EAEDED"/><text x="530" y="432" text-anchor="middle">10.10.20.1 - 254</text>
+    <rect x="630" y="417" width="120" height="22" fill="#EAEDED"/><text x="690" y="432" text-anchor="middle">10.10.20.1</text>
+    <rect x="750" y="417" width="180" height="22" fill="#EAEDED"/><text x="840" y="432" text-anchor="middle">Core Banking, DB</text>
+
+    <rect x="70" y="439" width="80" height="22" fill="#D6EAF8"/><text x="110" y="454" text-anchor="middle">30</text>
+    <rect x="150" y="439" width="130" height="22" fill="#F8F9F9"/><text x="215" y="454" text-anchor="middle">STAFF</text>
+    <rect x="280" y="439" width="150" height="22" fill="#F8F9F9"/><text x="355" y="454" text-anchor="middle">10.10.30.0/23</text>
+    <rect x="430" y="439" width="200" height="22" fill="#F8F9F9"/><text x="530" y="454" text-anchor="middle">10.10.30.1 - 31.254 (510)</text>
+    <rect x="630" y="439" width="120" height="22" fill="#F8F9F9"/><text x="690" y="454" text-anchor="middle">10.10.30.1</text>
+    <rect x="750" y="439" width="180" height="22" fill="#F8F9F9"/><text x="840" y="454" text-anchor="middle">Staff PCs</text>
+
+    <rect x="70" y="461" width="80" height="22" fill="#FADBD8"/><text x="110" y="476" text-anchor="middle">40</text>
+    <rect x="150" y="461" width="130" height="22" fill="#EAEDED"/><text x="215" y="476" text-anchor="middle">ATM</text>
+    <rect x="280" y="461" width="150" height="22" fill="#EAEDED"/><text x="355" y="476" text-anchor="middle">10.10.40.0/24</text>
+    <rect x="430" y="461" width="200" height="22" fill="#EAEDED"/><text x="530" y="476" text-anchor="middle">10.10.40.1 - 254</text>
+    <rect x="630" y="461" width="120" height="22" fill="#EAEDED"/><text x="690" y="476" text-anchor="middle">10.10.40.1</text>
+    <rect x="750" y="461" width="180" height="22" fill="#EAEDED"/><text x="840" y="476" text-anchor="middle">ATM (PCI-DSS)</text>
+
+    <rect x="70" y="483" width="80" height="22" fill="#FDEBD0"/><text x="110" y="498" text-anchor="middle">50</text>
+    <rect x="150" y="483" width="130" height="22" fill="#F8F9F9"/><text x="215" y="498" text-anchor="middle">VOIP</text>
+    <rect x="280" y="483" width="150" height="22" fill="#F8F9F9"/><text x="355" y="498" text-anchor="middle">10.10.50.0/24</text>
+    <rect x="430" y="483" width="200" height="22" fill="#F8F9F9"/><text x="530" y="498" text-anchor="middle">10.10.50.1 - 254</text>
+    <rect x="630" y="483" width="120" height="22" fill="#F8F9F9"/><text x="690" y="498" text-anchor="middle">10.10.50.1</text>
+    <rect x="750" y="483" width="180" height="22" fill="#F8F9F9"/><text x="840" y="498" text-anchor="middle">IP Phones</text>
+
+    <rect x="70" y="505" width="80" height="22" fill="#D1F2EB"/><text x="110" y="520" text-anchor="middle">60/70</text>
+    <rect x="150" y="505" width="130" height="22" fill="#EAEDED"/><text x="215" y="520" text-anchor="middle">WIFI</text>
+    <rect x="280" y="505" width="150" height="22" fill="#EAEDED"/><text x="355" y="520" text-anchor="middle">10.10.60/70.0/24</text>
+    <rect x="430" y="505" width="200" height="22" fill="#EAEDED"/><text x="530" y="520" text-anchor="middle">Corp + Guest</text>
+    <rect x="630" y="505" width="120" height="22" fill="#EAEDED"/><text x="690" y="520" text-anchor="middle">10.10.60.1/70.1</text>
+    <rect x="750" y="505" width="180" height="22" fill="#EAEDED"/><text x="840" y="520" text-anchor="middle">Wi-Fi Corp + Guest</text>
+  </g>
+
+  <!-- WAN P2P Info -->
+  <rect x="50" y="565" width="900" height="115" rx="8" fill="white" stroke="#E67E22" stroke-width="2" filter="url(#sh)"/>
+  <text x="500" y="588" text-anchor="middle" font-size="14" font-weight="bold" fill="#2C3E50">🔗 WAN P2P Links (172.16.1.0/24 with /30 per link)</text>
+
+  <g font-size="11" fill="#2C3E50">
+    <text x="80" y="615">• HO ↔ SR:</text>       <text x="170" y="615" font-weight="bold">172.16.1.0/30</text>   <text x="290" y="615" font-style="italic" fill="#7F8C8D">(.1 / .2)</text>
+    <text x="380" y="615">• HO ↔ BB:</text>      <text x="470" y="615" font-weight="bold">172.16.1.4/30</text>  <text x="590" y="615" font-style="italic" fill="#7F8C8D">(.5 / .6)</text>
+    <text x="680" y="615">• HO ↔ KC:</text>      <text x="770" y="615" font-weight="bold">172.16.1.8/30</text>  <text x="890" y="615" font-style="italic" fill="#7F8C8D">(.9/.10)</text>
+
+    <text x="80" y="640">• HO ↔ SH:</text>       <text x="170" y="640" font-weight="bold">172.16.1.12/30</text> <text x="290" y="640" font-style="italic" fill="#7F8C8D">(.13/.14)</text>
+    <text x="380" y="640">• HO ↔ KP:</text>      <text x="470" y="640" font-weight="bold">172.16.1.16/30</text> <text x="590" y="640" font-style="italic" fill="#7F8C8D">(.17/.18)</text>
+    <text x="680" y="640">• DMZ:</text>          <text x="750" y="640" font-weight="bold">172.16.99.0/24</text>
+
+    <text x="80" y="665" fill="#27AE60" font-weight="bold">✅ VLSM Design:</text> <text x="200" y="665">/16 for sites, /24 for VLANs, /30 for P2P links</text>
+  </g>
+</svg>
