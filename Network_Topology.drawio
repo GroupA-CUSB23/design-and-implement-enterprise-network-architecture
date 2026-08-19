@@ -1,0 +1,280 @@
+<mxfile host="app.diagrams.net" modified="2026-08-19T00:00:00.000Z" agent="Claude" version="22.0.0">
+  <diagram name="Bank Enterprise Network" id="bank-network">
+    <mxGraphModel dx="1600" dy="1000" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1200" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- Title -->
+        <mxCell id="title" value="Bank Enterprise Network Architecture - TCP/IP Model" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=20;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="400" y="20" width="800" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- Internet Cloud -->
+        <mxCell id="internet" value="INTERNET / ISP" style="ellipse;shape=cloud;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=14;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="700" y="80" width="200" height="100" as="geometry" />
+        </mxCell>
+
+        <!-- Edge Router -->
+        <mxCell id="edge-router" value="Edge Router&#xa;Cisco ASR 1001&#xa;BGP AS 65001" style="shape=mxgraph.cisco.routers.router;html=1;pointerEvents=1;dashed=0;fillColor=#036897;strokeColor=#ffffff;strokeWidth=2;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;fontColor=#000000" vertex="1" parent="1">
+          <mxGeometry x="760" y="220" width="80" height="80" as="geometry" />
+        </mxCell>
+
+        <!-- Firewall HA -->
+        <mxCell id="fw1" value="Firewall-1&#xa;Fortigate 600F&#xa;(Primary)" style="shape=mxgraph.cisco.security.firewall;html=1;pointerEvents=1;dashed=0;fillColor=#FF0000;strokeColor=#ffffff;strokeWidth=2;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;fontColor=#000000" vertex="1" parent="1">
+          <mxGeometry x="680" y="360" width="80" height="80" as="geometry" />
+        </mxCell>
+
+        <mxCell id="fw2" value="Firewall-2&#xa;Fortigate 600F&#xa;(Standby)" style="shape=mxgraph.cisco.security.firewall;html=1;pointerEvents=1;dashed=0;fillColor=#FF9900;strokeColor=#ffffff;strokeWidth=2;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;fontColor=#000000" vertex="1" parent="1">
+          <mxGeometry x="840" y="360" width="80" height="80" as="geometry" />
+        </mxCell>
+
+        <!-- HA Link -->
+        <mxCell id="ha-link" style="edgeStyle=none;rounded=0;html=1;strokeColor=#FF0000;dashed=1;strokeWidth=2;endArrow=none;startArrow=none" edge="1" parent="1" source="fw1" target="fw2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ha-label" value="HA Sync" style="text;html=1;align=center;fontSize=10;fontColor=#FF0000" vertex="1" parent="1">
+          <mxGeometry x="770" y="395" width="60" height="20" as="geometry" />
+        </mxCell>
+
+        <!-- DMZ Zone -->
+        <mxCell id="dmz-zone" value="DMZ ZONE" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;dashed=1;strokeWidth=2;verticalAlign=top;fontSize=12;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="1000" y="360" width="280" height="180" as="geometry" />
+        </mxCell>
+
+        <mxCell id="web-server" value="Web Server&#xa;(Internet Banking)&#xa;172.16.99.10" style="shape=mxgraph.cisco.servers.web_server;html=1;pointerEvents=1;fillColor=#036897;verticalLabelPosition=bottom;verticalAlign=top;align=center;fontSize=10" vertex="1" parent="1">
+          <mxGeometry x="1020" y="400" width="60" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="mail-server" value="Mail Server&#xa;172.16.99.20" style="shape=mxgraph.cisco.servers.mail_server;html=1;pointerEvents=1;fillColor=#036897;verticalLabelPosition=bottom;verticalAlign=top;align=center;fontSize=10" vertex="1" parent="1">
+          <mxGeometry x="1110" y="400" width="60" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="dns-server" value="DNS Server&#xa;172.16.99.30" style="shape=mxgraph.cisco.servers.standard_host;html=1;pointerEvents=1;fillColor=#036897;verticalLabelPosition=bottom;verticalAlign=top;align=center;fontSize=10" vertex="1" parent="1">
+          <mxGeometry x="1200" y="400" width="60" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- Core Switch -->
+        <mxCell id="core-sw1" value="Core Switch-1&#xa;Cisco Nexus 9336&#xa;(Active)" style="shape=mxgraph.cisco.switches.multilayer_switch;html=1;pointerEvents=1;fillColor=#036897;verticalLabelPosition=bottom;verticalAlign=top;align=center;fontSize=10;strokeColor=#ffffff;strokeWidth=2" vertex="1" parent="1">
+          <mxGeometry x="680" y="520" width="80" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="core-sw2" value="Core Switch-2&#xa;Cisco Nexus 9336&#xa;(Standby)" style="shape=mxgraph.cisco.switches.multilayer_switch;html=1;pointerEvents=1;fillColor=#036897;verticalLabelPosition=bottom;verticalAlign=top;align=center;fontSize=10;strokeColor=#ffffff;strokeWidth=2" vertex="1" parent="1">
+          <mxGeometry x="840" y="520" width="80" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- VSS Link -->
+        <mxCell id="vss-link" style="edgeStyle=none;rounded=0;html=1;strokeColor=#0066FF;dashed=1;strokeWidth=3;endArrow=none;startArrow=none" edge="1" parent="1" source="core-sw1" target="core-sw2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="vss-label" value="VSS / VPC" style="text;html=1;align=center;fontSize=10;fontColor=#0066FF" vertex="1" parent="1">
+          <mxGeometry x="770" y="545" width="60" height="20" as="geometry" />
+        </mxCell>
+
+        <!-- Distribution Layer -->
+        <mxCell id="dist-sw1" value="Dist SW-1&#xa;Catalyst 9500" style="shape=mxgraph.cisco.switches.layer_3_switch;html=1;pointerEvents=1;fillColor=#036897;verticalLabelPosition=bottom;verticalAlign=top;align=center;fontSize=10" vertex="1" parent="1">
+          <mxGeometry x="300" y="660" width="60" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="dist-sw2" value="Dist SW-2&#xa;Catalyst 9500" style="shape=mxgraph.cisco.switches.layer_3_switch;html=1;pointerEvents=1;fillColor=#036897;verticalLabelPosition=bottom;verticalAlign=top;align=center;fontSize=10" vertex="1" parent="1">
+          <mxGeometry x="600" y="660" width="60" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="dist-sw3" value="Dist SW-3&#xa;Catalyst 9500" style="shape=mxgraph.cisco.switches.layer_3_switch;html=1;pointerEvents=1;fillColor=#036897;verticalLabelPosition=bottom;verticalAlign=top;align=center;fontSize=10" vertex="1" parent="1">
+          <mxGeometry x="900" y="660" width="60" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="dist-sw4" value="Dist SW-4&#xa;(WAN Edge)" style="shape=mxgraph.cisco.switches.layer_3_switch;html=1;pointerEvents=1;fillColor=#036897;verticalLabelPosition=bottom;verticalAlign=top;align=center;fontSize=10" vertex="1" parent="1">
+          <mxGeometry x="1200" y="660" width="60" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- Server Farm -->
+        <mxCell id="server-zone" value="SERVER FARM (VLAN 20)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;dashed=1;strokeWidth=2;verticalAlign=top;fontSize=11;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="80" y="800" width="440" height="180" as="geometry" />
+        </mxCell>
+
+        <mxCell id="core-banking" value="Core Banking&#xa;Server (T24)&#xa;10.10.20.10" style="shape=mxgraph.cisco.servers.standard_host;html=1;pointerEvents=1;fillColor=#036897;verticalLabelPosition=bottom;verticalAlign=top;align=center;fontSize=9" vertex="1" parent="1">
+          <mxGeometry x="100" y="830" width="60" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="db-server" value="Database&#xa;Oracle DB&#xa;10.10.20.20" style="shape=mxgraph.cisco.servers.standard_host;html=1;pointerEvents=1;fillColor=#036897;verticalLabelPosition=bottom;verticalAlign=top;align=center;fontSize=9" vertex="1" parent="1">
+          <mxGeometry x="200" y="830" width="60" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="app-server" value="App Server&#xa;10.10.20.30" style="shape=mxgraph.cisco.servers.standard_host;html=1;pointerEvents=1;fillColor=#036897;verticalLabelPosition=bottom;verticalAlign=top;align=center;fontSize=9" vertex="1" parent="1">
+          <mxGeometry x="300" y="830" width="60" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="ad-server" value="AD/DNS&#xa;10.10.20.40" style="shape=mxgraph.cisco.servers.standard_host;html=1;pointerEvents=1;fillColor=#036897;verticalLabelPosition=bottom;verticalAlign=top;align=center;fontSize=9" vertex="1" parent="1">
+          <mxGeometry x="400" y="830" width="60" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- User LAN Zone -->
+        <mxCell id="user-zone" value="USER LAN (VLAN 30)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;dashed=1;strokeWidth=2;verticalAlign=top;fontSize=11;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="540" y="800" width="280" height="180" as="geometry" />
+        </mxCell>
+
+        <mxCell id="acc-sw1" value="Access SW-1&#xa;Catalyst 9200" style="shape=mxgraph.cisco.switches.workgroup_switch;html=1;pointerEvents=1;fillColor=#036897;verticalLabelPosition=bottom;verticalAlign=top;align=center;fontSize=9" vertex="1" parent="1">
+          <mxGeometry x="560" y="830" width="60" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="pc1" value="Staff PC&#xa;10.10.30.10" style="shape=mxgraph.cisco.computers_and_peripherals.pc;html=1;pointerEvents=1;fillColor=#036897;verticalLabelPosition=bottom;verticalAlign=top;align=center;fontSize=9" vertex="1" parent="1">
+          <mxGeometry x="660" y="830" width="60" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="ip-phone" value="IP Phone&#xa;VLAN 50" style="shape=mxgraph.cisco.storage.phone;html=1;pointerEvents=1;fillColor=#036897;verticalLabelPosition=bottom;verticalAlign=top;align=center;fontSize=9" vertex="1" parent="1">
+          <mxGeometry x="750" y="830" width="60" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- Wi-Fi Zone -->
+        <mxCell id="wifi-zone" value="WIFI (VLAN 60/70)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;dashed=1;strokeWidth=2;verticalAlign=top;fontSize=11;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="840" y="800" width="280" height="180" as="geometry" />
+        </mxCell>
+
+        <mxCell id="wlc" value="Wireless&#xa;Controller" style="shape=mxgraph.cisco.wireless.wireless_lan_controller;html=1;pointerEvents=1;fillColor=#036897;verticalLabelPosition=bottom;verticalAlign=top;align=center;fontSize=9" vertex="1" parent="1">
+          <mxGeometry x="860" y="830" width="60" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="ap1" value="AP (Corp)&#xa;10.10.60.x" style="shape=mxgraph.cisco.wireless.wireless_router;html=1;pointerEvents=1;fillColor=#036897;verticalLabelPosition=bottom;verticalAlign=top;align=center;fontSize=9" vertex="1" parent="1">
+          <mxGeometry x="960" y="830" width="60" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="ap2" value="AP (Guest)&#xa;10.10.70.x" style="shape=mxgraph.cisco.wireless.wireless_router;html=1;pointerEvents=1;fillColor=#036897;verticalLabelPosition=bottom;verticalAlign=top;align=center;fontSize=9" vertex="1" parent="1">
+          <mxGeometry x="1050" y="830" width="60" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- WAN / Branch Zone -->
+        <mxCell id="wan-zone" value="WAN - BRANCHES (MPLS/VPN)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;dashed=1;strokeWidth=2;verticalAlign=top;fontSize=11;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="1140" y="800" width="380" height="380" as="geometry" />
+        </mxCell>
+
+        <mxCell id="mpls-cloud" value="MPLS Cloud" style="ellipse;shape=cloud;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=10" vertex="1" parent="1">
+          <mxGeometry x="1240" y="830" width="180" height="80" as="geometry" />
+        </mxCell>
+
+        <mxCell id="br-siemreap" value="Branch SR&#xa;10.20.0.0/16" style="shape=mxgraph.cisco.routers.router;html=1;pointerEvents=1;fillColor=#036897;verticalLabelPosition=bottom;verticalAlign=top;align=center;fontSize=9" vertex="1" parent="1">
+          <mxGeometry x="1160" y="940" width="60" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="br-battam" value="Branch BB&#xa;10.30.0.0/16" style="shape=mxgraph.cisco.routers.router;html=1;pointerEvents=1;fillColor=#036897;verticalLabelPosition=bottom;verticalAlign=top;align=center;fontSize=9" vertex="1" parent="1">
+          <mxGeometry x="1240" y="940" width="60" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="br-kchamm" value="Branch KC&#xa;10.40.0.0/16" style="shape=mxgraph.cisco.routers.router;html=1;pointerEvents=1;fillColor=#036897;verticalLabelPosition=bottom;verticalAlign=top;align=center;fontSize=9" vertex="1" parent="1">
+          <mxGeometry x="1320" y="940" width="60" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="br-sihanouk" value="Branch SH&#xa;10.50.0.0/16" style="shape=mxgraph.cisco.routers.router;html=1;pointerEvents=1;fillColor=#036897;verticalLabelPosition=bottom;verticalAlign=top;align=center;fontSize=9" vertex="1" parent="1">
+          <mxGeometry x="1400" y="940" width="60" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="br-kampot" value="Branch KP&#xa;10.60.0.0/16" style="shape=mxgraph.cisco.routers.router;html=1;pointerEvents=1;fillColor=#036897;verticalLabelPosition=bottom;verticalAlign=top;align=center;fontSize=9" vertex="1" parent="1">
+          <mxGeometry x="1280" y="1060" width="60" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- Connections -->
+        <mxCell id="c1" style="edgeStyle=none;rounded=0;html=1;strokeWidth=2" edge="1" parent="1" source="internet" target="edge-router">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="c2" style="edgeStyle=none;rounded=0;html=1;strokeWidth=2" edge="1" parent="1" source="edge-router" target="fw1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="c3" style="edgeStyle=none;rounded=0;html=1;strokeWidth=2" edge="1" parent="1" source="edge-router" target="fw2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="c4" style="edgeStyle=none;rounded=0;html=1;strokeWidth=2" edge="1" parent="1" source="fw1" target="dmz-zone">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="c5" style="edgeStyle=none;rounded=0;html=1;strokeWidth=2" edge="1" parent="1" source="fw1" target="core-sw1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="c6" style="edgeStyle=none;rounded=0;html=1;strokeWidth=2" edge="1" parent="1" source="fw2" target="core-sw2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="c7" style="edgeStyle=none;rounded=0;html=1;strokeWidth=2" edge="1" parent="1" source="core-sw1" target="dist-sw1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="c8" style="edgeStyle=none;rounded=0;html=1;strokeWidth=2" edge="1" parent="1" source="core-sw1" target="dist-sw2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="c9" style="edgeStyle=none;rounded=0;html=1;strokeWidth=2" edge="1" parent="1" source="core-sw2" target="dist-sw3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="c10" style="edgeStyle=none;rounded=0;html=1;strokeWidth=2" edge="1" parent="1" source="core-sw2" target="dist-sw4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="c11" style="edgeStyle=none;rounded=0;html=1;strokeWidth=2" edge="1" parent="1" source="dist-sw1" target="server-zone">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="c12" style="edgeStyle=none;rounded=0;html=1;strokeWidth=2" edge="1" parent="1" source="dist-sw2" target="user-zone">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="c13" style="edgeStyle=none;rounded=0;html=1;strokeWidth=2" edge="1" parent="1" source="dist-sw3" target="wifi-zone">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="c14" style="edgeStyle=none;rounded=0;html=1;strokeWidth=2" edge="1" parent="1" source="dist-sw4" target="mpls-cloud">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="c15" style="edgeStyle=none;rounded=0;html=1;strokeWidth=1" edge="1" parent="1" source="mpls-cloud" target="br-siemreap">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="c16" style="edgeStyle=none;rounded=0;html=1;strokeWidth=1" edge="1" parent="1" source="mpls-cloud" target="br-battam">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="c17" style="edgeStyle=none;rounded=0;html=1;strokeWidth=1" edge="1" parent="1" source="mpls-cloud" target="br-kchamm">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="c18" style="edgeStyle=none;rounded=0;html=1;strokeWidth=1" edge="1" parent="1" source="mpls-cloud" target="br-sihanouk">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="c19" style="edgeStyle=none;rounded=0;html=1;strokeWidth=1" edge="1" parent="1" source="mpls-cloud" target="br-kampot">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Legend -->
+        <mxCell id="legend" value="LEGEND" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=1;verticalAlign=top;fontSize=11;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="40" y="80" width="220" height="240" as="geometry" />
+        </mxCell>
+
+        <mxCell id="legend-l1" value="Network Access Layer&#xa;(Ethernet, Wi-Fi, Cable)" style="text;html=1;align=left;fontSize=10" vertex="1" parent="1">
+          <mxGeometry x="50" y="110" width="200" height="30" as="geometry" />
+        </mxCell>
+
+        <mxCell id="legend-l2" value="Internet Layer&#xa;(IP, ICMP, OSPF, BGP)" style="text;html=1;align=left;fontSize=10" vertex="1" parent="1">
+          <mxGeometry x="50" y="150" width="200" height="30" as="geometry" />
+        </mxCell>
+
+        <mxCell id="legend-l3" value="Transport Layer&#xa;(TCP, UDP)" style="text;html=1;align=left;fontSize=10" vertex="1" parent="1">
+          <mxGeometry x="50" y="190" width="200" height="30" as="geometry" />
+        </mxCell>
+
+        <mxCell id="legend-l4" value="Application Layer&#xa;(HTTP, HTTPS, DNS, SNMP)" style="text;html=1;align=left;fontSize=10" vertex="1" parent="1">
+          <mxGeometry x="50" y="230" width="200" height="30" as="geometry" />
+        </mxCell>
+
+        <mxCell id="legend-note" value="Solid Line = Physical Link&#xa;Dashed Red = HA Sync&#xa;Dashed Blue = VSS/VPC" style="text;html=1;align=left;fontSize=9;fontStyle=2" vertex="1" parent="1">
+          <mxGeometry x="50" y="270" width="200" height="40" as="geometry" />
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
